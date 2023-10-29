@@ -6,7 +6,7 @@ Welcome to the Frontend Development Assignment Repository for Frontend Developme
 
 In this repository, you will find assignments given to the students as part of their learning journey in frontend development. Each assignment is stored in a separate folder, labeled with a meaningful name or description.
 
--[GitHub Clone Assignment (Repo Page)](https://github.com/fabiconcept/dsep-frontend-github/tree/main/github)
+- [GitHub Clone Assignment (Repo Page)](https://github.com/fabiconcept/dsep-frontend-github/tree/main/github)
 
 ## Corrections
 
