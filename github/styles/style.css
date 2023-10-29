@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem ;
+    font-size: .9rem;
+    background-color: #1F2328;
+    color: #fff;
+}
+
+nav .left {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+nav .left .li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 5px .5rem;
+    cursor: pointer;
+}
+
+nav .right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+nav .right .form-group {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.4);
+    flex: 1;
+    padding: 0 10px;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: .4rem;
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input {
+    background-color: transparent;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    width: 16rem;
+    outline: none;
+}
+
+.form-group .slash {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: .35rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 5px;
+    font-size: .8rem;
+    font-weight: 900;
+    display: grid;
+    place-content: center;
+}
+
+.right a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.right .btn {
+    padding: 8px;
+    border-radius: .4rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.mid {
+    display: grid;
+    padding: 2rem 0 0 0;
+    place-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.mid .row {
+    align-items: center;
+    display: flex;
+    gap: .5rem;
+    margin-left: 2rem;
+    margin-bottom: -2px;
+}
+
+.mid .row > div {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+    font-size: .9em;
+    text-transform: capitalize;
+}
+
+.mid .row > div.active {
+    border-bottom: 2px solid #e06849;
+    font-weight: 600;
+}
+
+.mid .row div .count {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 22px;
+    height: 22px;
+    font-size: .85rem;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 2rem;
+}
+
+.content .profile {
+    width: 19rem;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.content .profile .profile-content {
+    display: grid;
+    gap: 1.5rem;
+    height: fit-content;
+}
+
+.content .profile .dp{
+    width: 100%;
+    margin-top: -4rem;
+    height: fit-content;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    display: grid;
+}
+
+.profile .user-name {
+    display: grid;
+    gap: .5rem;
+}
+
+.content .profile .h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.profile .btn {
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.profile .followers {
+    display: flex;
+    font-size: .9rem;
+    align-items: center;
+    gap: .25rem;
+}
+
+.profile .followers .xs {
+    transform: scale(.3);
+    opacity: .5;
+}
+
+.profile .followers .st {
+    font-weight: 600;
+}
+
+.content .repo {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: .5rem;
+}
+
+.content .repo .repo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.repo .repo-grid .repo-box {
+    font-size: .9rem;
+    max-height: 10rem;
+    border-radius: .5rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+.repo .repo-grid .repo-box .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repo .repo-grid .repo-box .info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.repo .repo-grid .repo-box .info span {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+}
+
+.repo .repo-grid .repo-box .top .name {
+    cursor: pointer;
+    color: #1f6feb;
+    font-weight: 600;
+    font-size: 1.015rem;
+}
+
+.repo .repo-grid .repo-box .top .type {
+    padding: 2px 6px;
+    border-radius: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: .8rem;
+}
+
+.css {
+    color: #6e5494;
+}
+
+.html {
+    color: #c9510c;
+}
+
+.grid {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+    display: grid;
+    width: fit-content;
+    font-size: .8rem;
+    gap: 1rem;
+}
+
+.grid .grid-system {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.grid .grid-system .side-days {
+    display: grid;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    height: fit-content;
+    margin-top: 1rem;
+}
+
+.grid .grid-system .month-days {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.grid-system .cell {
+    height: 12.5px;
+    width: 12.5px;
+    background-color: #eee;
+    border-radius: 2.5px;
+}
+
+.grid-system .oct {
+    display: grid;
+    gap: .5rem;
+    width: fit-content;
+}
+
+.grid-system .mon {
+    gap: .5rem;
+    display: grid;
+    width: fit-content;
+}
+
+.grid-system .oct .boxes {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-system .mon .boxes {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .side {
+    display: flex;
+    gap: 3px;
+    align-items: baseline;
+}
+
+.footer .side .cell {
+    height: 10px;
+    width: 10px;
+    border-radius: 2px;
+}
+
+.cell.grade-1 {
+    background-color: rgba(0, 124, 0, 0.2);
+}
+
+.cell.grade-2 {
+    background-color: rgba(0, 124, 0, 0.4);
+}
+
+.cell.grade-3 {
+    background-color: rgba(0, 124, 0, 0.6);
+}
+
+.cell.grade-4 {
+    background-color: rgba(0, 124, 0, 0.8);
+}
+
+.cell.grade-5 {
+    background-color: rgba(0, 124, 0, 1);
+}
