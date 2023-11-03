@@ -220,11 +220,26 @@ body {
     position: absolute;
     bottom: 7rem;
     z-index: 10000;
-    animation: rumble 1s linear infinite;
+    animation: rumble 1s linear infinite, carTrip 30s linear infinite;
     display: flex;
     flex-direction: column;
-    left: 20rem;
+    left: -10rem;
 }
+
+@keyframes carTrip {
+    
+    50%{
+        transform: translateX(115vw);
+    }
+    51%{
+        transform: translateX(115vw) scaleX(-1);
+    }
+    99%{
+        transform: translateX(0) scaleX(-1);
+    }
+    
+}
+
 
 .car .top {
     width: 8rem;
