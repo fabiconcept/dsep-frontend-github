@@ -1,0 +1,403 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+.road {
+    position: fixed;
+    bottom: 0;
+    background-color: #9e9e9e;
+    height: 12rem;
+    z-index: 2;
+    width: 100vw;
+    border-top: 10px solid #eee;
+    border-bottom: 20px solid #eee;
+    box-shadow: 0 -10px black;
+    display: flex;
+    align-items: center;
+}
+
+.road .lines {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.road .lines div {
+    height: 40px;
+    position: absolute;
+    right: -5rem;
+    width: 5rem;
+    animation: movingTile 5s linear infinite;
+    background-color: white;
+}
+
+.road .lines div:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.road .lines div:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.road .lines div:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.road .lines div:nth-child(5) {
+    animation-delay: 2s;
+}
+
+.road .lines div:nth-child(6) {
+    animation-delay: 2.5s;
+}
+
+.road .lines div:nth-child(7) {
+    animation-delay: 3s;
+}
+
+.road .lines div:nth-child(8) {
+    animation-delay: 3.5s;
+}
+
+.road .lines div:nth-child(9) {
+    animation-delay: 4s;
+}
+
+.road .lines div:nth-child(10) {
+    animation-delay: 4.5s;
+}
+
+.road .lines div:nth-child(11) {
+    animation-delay: 5s;
+}
+
+@keyframes movingTile {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-110vw);
+    }
+}
+
+.sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    animation: sky 20s ease infinite;
+    background-color: rgb(25, 136, 201);
+}
+
+@keyframes sky {
+    30% {
+        background-color: rgb(25, 136, 201);
+    }
+    50% {
+        background-color: rgb(3, 26, 39);
+    }
+}
+
+.sun {
+    height: 8rem;
+    width: 8rem;
+    position: absolute;
+    bottom: 8rem;
+    transform-origin: left;
+    left: 10rem;
+    animation: risingSun 10s linear infinite;
+}
+
+
+.sun::after {
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.sun::before {
+    content: "";
+    top: 50%;
+    z-index: 0;
+    left: 50%;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    height: 8rem;
+    width: 8rem;
+    filter: blur(25px);
+    background-color: rgb(255, 255, 165);
+    transform: translate(-50%, -50%);
+}
+
+@keyframes risingSun {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateX(40vw) translateY(-70vh) rotate(54deg);
+    }
+
+    80% {
+        transform: translateX(70vw) translateY(-70vh) rotate(54deg);
+    }
+    100% {
+        transform: translateX(80vw) translateY(-0vh) rotate(54deg);
+    }
+}
+
+.building {
+    display: flex;
+    position: absolute;
+    bottom: 12.5rem;
+    align-items: end;
+    right: 0;
+    z-index: 60;
+    perspective: 500px;
+}
+
+.building .pavement {
+    width: 10rem;
+    border-left: 1rem solid transparent;
+    border-bottom: 1.5rem solid;
+    height: 3rem;
+}
+
+.building .building-main {
+    height: 68vh;
+    width: 10rem;
+    padding: 1rem;
+    background-color: #000;
+}
+
+.building .building-shadow {
+    height: 64.75vh;
+    width: 3rem;
+    position: absolute;
+    z-index: 20;
+    left: 36%;
+    top: 0;
+    background-color: #9e9e9e;
+    transform: rotateY(-20deg) translateY(3px);
+}
+
+.building .building-main .windows {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.building .building-main .windows div {
+    height: 3rem;
+    background-color: white;
+}
+
+.building .building-main .windows div.yellow {
+    background-color: rgb(255, 255, 165);
+}
+
+.car {
+    position: absolute;
+    bottom: 7rem;
+    z-index: 10000;
+    animation: rumble 1s linear infinite;
+    display: flex;
+    flex-direction: column;
+    left: 20rem;
+}
+
+.car .top {
+    width: 8rem;
+    height: 4rem;
+    margin-left: 1rem;
+    background-color: rgb(128, 0, 0);
+    border-radius: 2rem 2.5rem 0 0;
+    padding: 8px;
+    margin-bottom: -.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.car .top div {
+    height: 70%;
+    width: 40%;
+    background-color: #fff;
+    border: 4px solid rgb(255, 255, 165);
+}
+
+.car .top .win01 {
+    border-radius: 2rem 0 0 0;
+}
+
+.car .top .win02 {
+    border-radius: 0 2rem  0 0;
+}
+
+.car .body {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    width: 13rem;
+    align-items: center;
+    border-radius: 2.5rem 5rem 0 0;
+    background-color: rgb(221, 4, 4);
+}
+
+.car .body .door {
+    height: 70%;
+    width: 3rem;
+    border: 1px solid #fff;
+    margin-left: 1rem;
+    position: relative;
+    border-radius: .5rem 1.5rem .5rem .5rem;
+}
+
+.car .body .door::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 35%;
+    transform: translateX(-50%);
+    height: 10px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 1rem;
+}
+
+.car .body .lamp {
+    position: absolute;
+    right: -26rem;
+    height: 5rem;
+    transform: rotate(-5deg);
+    animation: lamp 2s linear infinite;
+    transform-origin: left;
+    width: 25rem;
+    clip-path: polygon(0 44%, 99% 29%, 100% 92%, 0 69%);
+    background-image: linear-gradient(to right, rgb(255, 255, 165), transparent);
+}
+
+.car .body .lamp .lamp-main {
+    position: relative;
+}
+
+.car .body::after {
+    content: "";
+    position: absolute;
+    right: -.75rem;
+    height: 1.75rem;
+    border: 1px solid rgb(3, 26, 39, 0.4);
+    width: 10px;
+    top: 4.5rem;
+    transform: translateY(50%);
+    border-radius: 1rem;
+    background-color: #fff;
+}
+
+
+.car .tires {
+    z-index: 3;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 .5rem;
+    margin-top: -2rem;
+}
+
+.car .tires .tire {
+    height: 4rem;
+    width: 4rem;
+    display: grid;
+    place-content: center;
+    position: relative;
+    border-radius: 50%;
+    animation: wheel 1s linear infinite;
+    background-color: #000;
+}
+
+.car .tires .tire::after {
+    content: "";
+    top: 50%;
+    left: 50%;
+    border-radius: 1rem;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    height: 2rem;
+    width: 4px;
+    background-color: white;
+}
+
+.car .tires .tire::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    border-radius: 1rem;
+    transform: translate(-50%, -50%) rotate(90deg);
+    position: absolute;
+    height: 2rem;
+    width: 4px;
+    background-color: white;
+}
+
+.car .tires .tire .point {
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    z-index: 999;
+    background-color: black;
+}
+
+.car .tires .tire .point::after {
+    content: "";
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .4);
+    transform: translate(-50%, -50%);
+}
+
+@keyframes wheel {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes lamp {
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes rumble {
+    25% {
+        transform:  rotate(-2deg);
+    }
+    50% {
+        transform:  rotate(2deg);
+    }
+}
