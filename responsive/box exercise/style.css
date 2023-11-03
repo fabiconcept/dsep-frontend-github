@@ -1,0 +1,16 @@
+main div {
+    min-height: 100vh;  
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    float: right;
+    background-color: red;
+}
+
+nav a {
+    color: #fff;
+    padding: 10px;
+}
