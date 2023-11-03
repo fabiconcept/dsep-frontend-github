@@ -170,7 +170,8 @@ body {
     position: absolute;
     bottom: 12.5rem;
     align-items: end;
-    right: 0;
+    right: -20rem;
+    animation: movingTile 20s linear infinite;
     z-index: 60;
     perspective: 500px;
 }
